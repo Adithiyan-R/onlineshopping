@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:context="http://www.springframework.org/schema/context"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context.xsd">
+
+<context:annotation-config/>
+
+<bean id="user" class="onlineshopping.User">
+<property name="username" value="Jordan"/>
+<property name="email" value="jordan@jordan.com" />
+<property name="password" value="Jordan123" />
+<property name="shipping_address" value="4th west cross street, London" />
+<property name="billing_address" value="4th west cross street, London" />
+</bean>
+
+<bean id="product1" class="onlineshopping.Product" >
+	<property name="product_name" value="PS5" />
+	<property name="price" value="80000" />
+	<property name="quantity_in_stock" value="13" />
+	<property name="imagelocation" value="qwe" />
+</bean>
+
+<bean id="product2" class="onlineshopping.Product" >
+	<property name="product_name" value="XboX" />
+	<property name="price" value="40000" />
+	<property name="quantity_in_stock" value="50" />
+	<property name="imagelocation" value="rty" />
+</bean>
+
+<bean id="product3" class="onlineshopping.Product" >
+	<property name="product_name" value="Nintendo Switch" />
+	<property name="price" value="30000" />
+	<property name="quantity_in_stock" value="68" />
+	<property name="imagelocation" value="uio" />
+</bean>
+
+<bean id="product4" class="onlineshopping.Product" >
+	<property name="product_name" value="Steam Deck" />
+	<property name="price" value="50000" />
+	<property name="quantity_in_stock" value="2" />
+	<property name="imagelocation" value="pas" />
+</bean>
+
+<bean id="product5" class="onlineshopping.Product" >
+	<property name="product_name" value="RTX 3090" />
+	<property name="price" value="200000" />
+	<property name="quantity_in_stock" value="3" />
+	<property name="imagelocation" value="dfg" />
+</bean>
+
+<bean id="product6" class="onlineshopping.Product" >
+	<property name="product_name" value="Ryzen 9" />
+	<property name="price" value="60000" />
+	<property name="quantity_in_stock" value="45" />
+	<property name="imagelocation" value="hjk" />
+</bean>
+
+<bean id="product7" class="onlineshopping.Product" >
+	<property name="product_name" value="logitech g pro wireless" />
+	<property name="price" value="25000" />
+	<property name="quantity_in_stock" value="34" />
+	<property name="imagelocation" value="lzx" />
+</bean>
+
+<bean id="cart1" class="onlineshopping.Cart" >
+	<property name="ProductList">
+		<list>
+			<ref bean="product2"/>
+			<ref bean="product3"/>
+			<ref bean="product7"/>
+		</list>
+	</property>
+	<property name="status" value="true" />
+	<property name="confirmOrder" value="true" />
+</bean>
+
+<bean id="cart2" class="onlineshopping.Cart" >
+	<property name="ProductList">
+		<list>
+			<ref bean="product1"/>
+			<ref bean="product4"/>
+			<ref bean="product7"/>
+		</list>
+	</property>
+	<property name="status" value="true" />
+	<property name="confirmOrder" value="true" />
+</bean>
+
+<bean id="cart3" class="onlineshopping.Cart" >
+	<property name="ProductList">
+		<list>
+			<ref bean="product5"/>
+			<ref bean="product1"/>
+			<ref bean="product7"/>
+		</list>
+	</property>
+	<property name="status" value="true" />
+	<property name="confirmOrder" value="true" />
+</bean>
+
+<bean id="cart4" class="onlineshopping.Cart" >
+	<property name="ProductList">
+		<list>
+			<ref bean="product6"/>
+			<ref bean="product5"/>
+			<ref bean="product2"/>
+		</list>
+	</property>
+	<property name="status" value="true" />
+	<property name="confirmOrder" value="true" />
+</bean>
+
+<bean id="order" class="onlineshopping.Order" >
+	<property name="Cartlist">
+		<list>
+			<ref bean="cart1" />
+			<ref bean="cart2" />
+			<ref bean="cart3" />
+			<ref bean="cart4" />
+		</list>
+	</property>
+</bean>
+
+</beans>
